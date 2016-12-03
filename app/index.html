@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/app/prd/styles/app.css">
+</head>
+<body>
+   <div ng-controller="table" class="search">
+        <p><input type="text" placeholder="searchName" ng-model="searchText1">
+          <input type="text" placeholder="searchName" ng-model="searchText2"><input type="checkbox"><span>Exact Match</span></p> 
+        <table>
+            <thead>
+                  <tr>
+                     <td class="">FirstName</td>
+                     <td class="">LastName</td>
+                     <td class="">Gender</td>
+                     <td class="">Salary</td>
+                     <td class="">Salary</td>
+                     <td class="">Birthdy</td>
+                  </tr>   
+            </thead>
+            <tbody>
+                  <tr ng-repeat="item in tables | filter:searchText1 | filter:searchText2">
+                     <td>{{ item.FirstName }}</td>
+                     <td>{{ item.LastName }}</td>
+                     <td>{{ item.Gender }}</td>
+                     <td>{{ item.Salary }}</td>
+                     <td>{{ item.Salary }}</td>
+                     <td>{{ item.Birthdy }}</td>
+                  </tr> 
+            </tbody>
+            
+        </table>
+   </div>
+   <script src="/libs/angular.min.js"></script>
+   <script src="/libs/jquery.min.js"></script>
+   <script src="/app/prd/scripts/app-fc56d1fdb4.js"></script>
+   <script src="/app/src/scripts/demos/demo1.js"></script>
+</body>
+</html>
